@@ -38,7 +38,7 @@ gem 'omniauth-facebook'
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
 
-gem 'binding_of_caller'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -64,6 +64,7 @@ group :development do
   gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
   gem 'faker'
   gem 'populator'
+  gem 'binding_of_caller'
 end
 
 group :test do
