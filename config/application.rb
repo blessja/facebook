@@ -1,11 +1,17 @@
 require_relative 'boot'
 
 require 'rails/all'
-config.assets.initialize_on_precompile = false
+config.assets.initialize_on_precompile = true
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+begin
+  require 'minitest/autorun'
+rescue LoadError => e
+  raise e unless ENV['RAILS_ENV'] == "production"
+end
 module OdinFacebook
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
